@@ -1,0 +1,14 @@
+.drop-a-hint-icon .drophint-icon {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.drophint-icon:hover {
+    background-image: url(./drop-hint.gif);
+}
+
+.drophint-icon {
+    background-image: url(./dropahint.svg);
+}

@@ -1,0 +1,24 @@
+
+.search{
+    width: 17px;
+    height: 17px;
+}
+
+.search svg{
+    width: 17px;
+    height: 17px;
+}
+
+.search:hover svg{
+    display: none;
+}
+
+.search img{
+    display: none;
+    width: 17px;
+    height: 17px;
+}
+
+.search:hover img{
+    display: block;
+}

@@ -1,0 +1,150 @@
+
+.ProductContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin-bottom: 32px;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    overflow: unset;
+}
+
+
+.ProductsDescription .Name__Brand{
+    line-height: 34.15px;
+    width: 100%;
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.ProductsDescription h1 {
+    width: 100%;
+    color: #333;
+    font-size: 27.32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.ProductsDescription .ListPrice {
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration-line: line-through;
+    color: #8A8A8A;
+}
+
+.content-ProductsDescription .breadCrumb{
+    font-size: 10px;
+    font-weight: 400;
+    color: #000;
+    float: left;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 10px;
+}
+
+.content-ProductsDescription .Container__medidas-e-sku-selector{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #000;
+    width: 100%;
+}
+
+.content-ProductsDescription .Container__medidas-e-sku-selector .size-title,    
+.content-ProductsDescription .Container__medidas-e-sku-selector .size-info,    
+.content-ProductsDescription .Container__medidas-e-sku-selector .tamanho-especification{
+    width: fit-content;
+}
+
+.content-ProductsDescription button.buy-button:hover {
+    background-color: #81d8d0;
+    color: #000;
+}
+
+.content-ProductsDescription button.buy-button{
+    transition: all .2s;
+    height: 50px;
+    width: 100%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0;
+    background: #000;
+    border: 1px solid #000;
+    color: white;
+    padding-top: 0.25em;
+    padding-bottom: 0.32em;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem
+}
+
+.content-ProductsDescription .express-shipping span{
+    font-family: 'Santral Light';
+    font-size: 13px;
+}
+
+.content-ProductsDescription{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.medidas-e-sku-selector,
+.Container__medidas-e-sku-selector{
+    width: 100%;
+}
+
+.Description .title__Description{
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.productNameContainer{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+@media screen and (max-width: 900px) {
+    .ProductContainer {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .content-ProductsDescription{
+        width: 100%;
+        padding: 0;
+    }
+
+    .ProductsImage {
+        width: 100%;
+        max-width: 60%;
+    }
+    
+    .ProductsDescription{
+        padding: 3.5vw 7.5% 0;
+        width: 100%;
+        max-width: 40%;
+        position: sticky;
+        top: 26px;
+    }
+
+    .container__subProductImage{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

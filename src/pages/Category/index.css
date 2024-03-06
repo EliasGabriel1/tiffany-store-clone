@@ -1,0 +1,58 @@
+
+.page-category .breadCrumb{
+    font-size: 10px;
+    font-weight: 400;
+    color: #000;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 10px;
+
+}
+
+
+.page-category .container-breadcrumb{
+    padding: 0 52px;
+}
+
+.backToTopButtonContainer .button__label {
+    color: #000 !important;
+    font-size: 0;
+    padding: 0 !important;
+}
+
+.backToTopButtonContainer .button {
+    background: transparent !important;
+    border: none;
+    padding: 0;
+    min-height: 1rem !important;
+    height: 16px !important;
+}
+
+.backToTopButtonContainer .button__label:before {
+    content: "Voltar ao Topo";
+    display: inline-block;
+    font-size: .75rem !important;
+    line-height: 16px;
+}
+
+.backToTopButtonContainer .button__label {
+    color: #000 !important;
+    font-size: 0;
+    padding: 0 !important;
+}
+
+.backToTopButtonContainer {
+    position: static !important;
+    z-index: 10 !important;
+}
+
+.backToTopButtonContainer .button__label:after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: url(https://tiffany.vtexassets.com/assets/vtex/assets-builder/tiffany.store-theme/0.0.45/images/back-to-top___b34f90d….svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+}
