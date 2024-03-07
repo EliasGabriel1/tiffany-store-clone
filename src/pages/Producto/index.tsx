@@ -11,15 +11,18 @@ import FavoriteLink from "../../Components/FavoriteLink";
 import DropaHint from "../../Components/DropaHint";
 import ShelfCustom from "../../Components/Shelf";
 import BannerFinal from "../../Components/BannerFinal";
+import SizeModal from "../../Components/SizeModal";
 
 
 function ProductPage(props: any): JSX.Element {
     const { addItemToCart, addFav, fav } = useContext(AppContext);
     const [data, setData] = useState<VitrineProps["data"] | null>(null);
+    const [Modal, setModal] = useState(false);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<any>(null);
     const { Product } = useContext(AppContext);
     const [background, setBackground] = useState("#000");
+
     console.log(Product)
     useEffect(() => {
         fetch("./api/Category.json", {
@@ -75,12 +78,12 @@ function ProductPage(props: any): JSX.Element {
     }
 
 
-    const loveyourWay={
+    const loveyourWay = {
         "imagedesktop": "https://media.tiffany.com/is/image/tiffanydm/2023_GW-HP-FWMH-Desktop?$tile$&wid=2992&fmt=webp",
         "imagemobile": "https://media.tiffany.com/is/image/tiffanydm/2023_GW-HP-FWMH-Mobile?$tile$&wid=720&fmt=webp",
     }
 
-    const fromthesource={
+    const fromthesource = {
         "imagedesktop": "https://media.tiffany.com/is/image/tiffanydm/2021_Bloomgberg-HP_FWMH-Desktop2?$tile$&wid=2992&fmt=webp",
         "imagemobile": "https://media.tiffany.com/is/image/tiffanydm/2021_Bloomgberg-HP_FWMH-Mobile?$tile$&wid=720&fmt=webp",
     }
@@ -90,6 +93,7 @@ function ProductPage(props: any): JSX.Element {
             <Header data={data} loading={loading} error={error} />
             {Product[0]?.length > 0 ?
                 <>
+                    {Modal ? <SizeModal setModal={setModal} Modal={Modal} /> : ""}
                     <div className="container">
                         <div className="ProductContainer">
                             <div className="ProductsImage">
@@ -130,7 +134,7 @@ function ProductPage(props: any): JSX.Element {
                                             <div className="d-flex justify-space-between">
                                                 <div className="size-title">Tamanho</div>
                                                 <div className="size-info">
-                                                    <p >Guia de Tamanhos</p>
+                                                    <p onClick={() => setModal(true)}>Guia de Tamanhos</p>
                                                 </div>
                                                 <div className="tamanho-especification">Único</div>
                                             </div>

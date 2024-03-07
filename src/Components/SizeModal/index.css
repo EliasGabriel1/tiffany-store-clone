@@ -1,0 +1,51 @@
+.Profile {
+  width: 17px;
+  height: 17px;
+}
+
+.Profile picture > svg {
+  width: 17px;
+  height: 17px;
+}
+
+.Profile:hover picture > svg {
+  display: none;
+}
+
+.Profile picture > img {
+  display: none;
+  width: 17px;
+  height: 17px;
+}
+
+.Profile:hover picture > img {
+  display: block;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: right 0.3s ease-in-out;
+}
+
+.modal-container.visible {
+    right: 0;
+    width: 100%;
+    max-width: fit-content;
+    z-index: 1000;
+}
+
+.modal-content {
+    padding: 20px;
+    overflow: auto;
+    max-height: 100%;
+}
+
+button {
+  margin-top: 10px;
+}
