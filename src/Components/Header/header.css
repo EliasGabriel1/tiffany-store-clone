@@ -135,7 +135,7 @@ header .desktop .subcategoria>ul>li {
     padding: 8px 0;
     color: #000;
     line-height: 1.71;
-    font-family: Santral W01;
+    font-family: 'Santral Light';
     font-weight: 400;
     font-style: normal;
     outline: 0;
@@ -283,7 +283,7 @@ header.sticky {
     font-size: .875rem;
     line-height: 1.72;
     letter-spacing: normal;
-    font-family: Santral W01;
+    font-family: 'Santral Light';
     font-weight: 600;
     font-style: normal;
     font-stretch: normal;
@@ -295,7 +295,7 @@ header.sticky {
     color: #000;
     line-height: 1.71;
     letter-spacing: normal;
-    font-family: Santral W01;
+    font-family: 'Santral Light';
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;

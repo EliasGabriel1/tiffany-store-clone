@@ -128,28 +128,28 @@ function AppProvider(props: any) {
             sessionStorage.setItem('Product', arraySerializado);
         }
     }, [Product]);
-    
+
 
     useEffect(() => {
         var arraySerializadoRecuperado: any = sessionStorage.getItem('Product');
-    
+
         if (arraySerializadoRecuperado) {
             var arrayRecuperado = JSON.parse(arraySerializadoRecuperado);
-    
+
             if (Product && Product.length === 0) {
                 setProduct(arrayRecuperado);
             }
         }
-          // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    
+
 
     useEffect(() => {
         var arraySerializadoRecuperado: any = sessionStorage.getItem('cart');
-    
+
         if (arraySerializadoRecuperado) {
             var arrayRecuperado = JSON.parse(arraySerializadoRecuperado);
-    
+
             if (cart && cart.length === 0) {
                 setCart(arrayRecuperado);
             }
@@ -212,6 +212,8 @@ function AppProvider(props: any) {
 
     const clearCart = () => {
         setCart([]);
+        var array: any = []
+        sessionStorage.setItem('cart', array);
     };
 
     const login = (user: string) => {

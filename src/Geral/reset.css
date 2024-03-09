@@ -89,6 +89,10 @@ input[type="text" i] {
     background: #585858;
 }
 
+button::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
 .container {
     max-width: 1600px;
     margin: 0 auto;

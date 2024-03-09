@@ -46,6 +46,6 @@
     max-height: 100%;
 }
 
-button {
+.modal-content button {
   margin-top: 10px;
 }

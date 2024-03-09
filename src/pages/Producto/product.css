@@ -1,4 +1,8 @@
 
+.page-product{
+    padding: 0 16px;
+}
+
 .ProductContainer {
     display: flex;
     flex-wrap: nowrap;

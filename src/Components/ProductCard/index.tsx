@@ -25,8 +25,10 @@ interface Flag {
 
 
 function ProductCard(props: Props) {
-    const [background, setBackground] = useState("#000");
-    const { addItemToCart, IrAoItem, NovoItem, addFav, fav } = useContext(AppContext);
+    const [favorito, setFavorito] = useState(false);
+    const [rendered, setRendered] = useState(false);
+
+    const { addItemToCart, IrAoItem, NovoItem, addFav, fav, removeFav } = useContext(AppContext);
 
     const navigate = useNavigate();
 
@@ -51,14 +53,31 @@ function ProductCard(props: Props) {
     };
 
     useEffect(() => {
-        fav.map((itemfav: any) => {
-            return itemfav === item.productId ? setBackground("red") : ""
-        })
-    })
+      if (!rendered) {
+        setRendered(true);
+      }
+    }, [rendered]);
+  
+    useEffect(() => {
+      if (rendered) {
+        fav.forEach((itemfav: any) => {
+          if (itemfav === item.productId) {
+            setFavorito(true);
+          }
+        });
+      }
+    // eslint-disable-next-line
+    }, [rendered, item.productId, setFavorito]);
+      
 
     const favoreitei = () => {
-        addFav(item.productId)
-        setBackground("red")
+        addFav(item.productId);
+
+        setFavorito(!favorito)
+
+        fav.map((itemfav: any) => {
+            return itemfav === item.productId ? removeFav(item.productId) : ""
+        })
     }
 
     const productItem: ProductItem[] = [
@@ -77,22 +96,22 @@ function ProductCard(props: Props) {
         },
     ];
 
-    function removeSpacesAndPercentage(str:string) {
+    function removeSpacesAndPercentage(str: string) {
         let result = str;
-      
+
         // Verifica se a string contém números
         if (/\d/.test(result)) {
-          // Adiciona uma flag no início do texto
-          result = `FLAG${result}`;
-      
-          // Remove a porcentagem
-          result = result.replace('%', '');
-          return result;
+            // Adiciona uma flag no início do texto
+            result = `FLAG${result}`;
+
+            // Remove a porcentagem
+            result = result.replace('%', '');
+            return result;
         }
 
         result = str.replace(/\s/g, '');
         return result;
-      }
+    }
 
     return (
         <li className="item-product">
@@ -104,7 +123,7 @@ function ProductCard(props: Props) {
                             return (<p className={`flag ${flag.id} ${removeSpacesAndPercentage(flag.label)}`} key={i + 1}>{flag.label}</p>)
                         })}
                     </span>
-                    <span className="Card__favorite" style={{ color: background, cursor: "pointer" }} onClick={() => { favoreitei() }}>
+                    <span className={`Card__favorite ${favorito ? "favoritado" : ""}`} style={{ cursor: "pointer" }} onClick={() => { favoreitei() }}>
                         <FavoriteLink />
                     </span>
 
@@ -127,18 +146,6 @@ function ProductCard(props: Props) {
                                 {item.productName}
                             </span>
                         </div>
-
-                        {/*<div className="Card__product-price">
-
-
-                            <span className="Card__product-list-price">{item.items[0].sellers[0].commertialOffer.ListPrice}</span>
-
-
-                        <span className="Card__installment">
-                                {item.items[0].sellers[0].commertialOffer.PaymentOptions.installmentOptions[0].installments[2].count} cuotas de <span className="nowrap">$ {item.items[0].sellers[0].commertialOffer.PaymentOptions.installmentOptions[0].installments[2].value}</span>
-                            </span> 
-
-                        </div>*/}
 
                     </div>
 
